@@ -4,32 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>devices.css</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="devices.css" type="text/css">
   <script type="module" src="/main.js"></script>
   <style>
     .container {
-      height: fit-content;
+      width: 200px;
+      height: 300px;
+      max-width: 100vw;
+      max-height: 100vh;
       border: 1px solid black;
-      /* margin: 1rem;*/
-      overflow: visible;
+      overflow: auto;
       padding: 1rem;
-      resize: both;
+      resize: horizontal;
+    }
+    .wrapper {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
     .links {
       margin: 0 auto;
       width: fit-content;
     }
+    .device-wrapper {
+      max-width: 66.666%;
+      margin: 0 auto;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .marvel-device .screen {
+      font-size: clamp(8px, calc(24px / var(--size-divisor)), 16px);
+    }
+    .font-size-indicator {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #666;
+      font-family: monospace;
+    }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="wrapper">
     <div class="links">
       <p><a target="_blank" href="https://github.com/philipkiely/devices.css">philipkiely/devices.css</a></p>
       <p><a target="_blank" href="https://github.com/trasherdk/devices.css">trasherdk/devices.css</a></p>
     </div>
 
-    <div class="col-md-8 offset-md-2 col-12">
+  <div class="container">
+    <div class="device-wrapper">
 
       <div class="marvel-device iphone8">
         <div class="notch">
@@ -55,6 +79,9 @@
       </div>
 
     </div>
+
+  </div>
+  <div class="font-size-indicator" id="font-size-indicator">font-size: —</div>
 
   </div>
 </body>
